@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html langss="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfoli</title>
+    <link rel="stylesheet" href="p.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body{
+          background-color:black;
+      }
+      #about {
+          padding: 80px 0;
+          color: #efe0e0;
+          /* background-color:black; */
+      }
+      
+      .row {
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          margin-left: 50px;
+      }
+      
+      .about-col-1 {
+          flex-basis: 35%;
+      }
+      
+      .about-col-1 img {
+          width: 80%;
+          height: 95%;
+          clip-path: ellipse(50% 50% at 50% 50%);
+          border-radius: 35px;
+      }
+      
+      .about-col-2 {
+          flex-basis: 60%;
+      }
+     
+      
+      .sub-title {
+          font-size: 60px;
+          font-weight: 600;
+          color: #fff;
+      }
+      
+      .tag-titles {
+          display: flex;
+          margin: 20px 0 40px;
+      }
+      
+      .tag-links {
+          margin-right: 50px;
+          font-size: 18px;
+          font-weight: 500;
+          cursor: pointer;
+          position: relative;
+      }
+      
+      .tag-links::after {
+          content: '';
+          width: 0;
+          height: 3px;
+          background: red;
+          position: absolute;
+          left: 0;
+          bottom: -8px;
+          transition: 0.5s;
+      }
+      
+      .tag-links.active-link::after {
+          width: 50%;
+      
+      }
+      
+      ul li {
+          list-style: none;
+          margin: 10px 0;
+      
+      
+      }
+      
+      ul li span {
+          color:red;
+          font-size: 45px;
+      
+      
+      }
+      span{
+          color:red;
+       
+      }
+      .ab{
+        font-size: 2.3rem;
+      }
+      
+      .tab-contents {
+          display: none;
+      }
+      
+      .tab-contents.active-tab {
+          display: block;
+      }</style>
+  </head>
+  <body>
+    <!-- --------------------------------Create a Navbar-------------------------- -->
+    <header class="header">
+      <a href="#" class="logo">Portfolio</a>
+      <i class="bx bx-menu" id="menu"></i>
+      <!-- <i class="bx bx-x" id="menu"></i> -->
+      <nav class="navbar">
+        <a href="#home" style="--clr: 1" class="active">Home</a>
+        <a href="#about" style="--clr: 2">About</a>
+        <a href="#service" style="--clr: 3">Services</a>
+        <a href="#portfolio" style="--clr: 4">Portfolio</a>
+        <a href="#contact" style="--clr: 5">Contact</a>
+      </nav>
+    </header>
+    <!-- --------------------------------Create a Home Section-------------------------- -->
+    <section class="home" id="home">
+      <div class="home-detail">
+        <h3>Hello It's Me</h3>
+        <h1>Sakshi Jadhav</h1>
+        <h3>And I'm <span class="textline">Frontend Developer</span></h3>
+        <p>I design and develop web based components and systems</p>
+        <div class="social-media">
+          <a href="https://twitter.com/SakshiJ70540427" target="_blank"
+            ><i class="bx bxl-twitter"></i
+          ></a>
+          <a href="https://www.instagram.com/sakshijadhav3173/" target="_blank"
+            ><i class="bx bxl-instagram"></i
+          ></a>
+          <a href="https://github.com/sakshi0078" target="_blank"
+            ><i class="bx bxl-github"></i
+          ></a>
+          <a href="#" target="_blank"><i class="bx bxl-facebook"></i></a>
+        </div>
+        <div>
+          <a href="/cv.txt" target="_blank">
+            <button class="btn">Download CV</button>
+          </a>
+          <!-- <button class="btn"  > Download CV</button> -->
+        </div>
+      </div>
+      <div class="home-img">
+        <img src="background.png" alt="background image" />
+      </div>
+    </section>
+
+    <!-- --------------------------------Create A About Section-------------------------- -->
+    <section class="about" id="about">
+      <!-- <div class="about-img">
+        <img src="ab.png" alt=" profile" />
+       </div> --> -->
+      <!-- <div class="about-section"> -->
+        <!-- <h2 class="allheading">About <span>Me</span></h2> -->
+        <!-- <h3>Frontend Developer</h3> -->
+        <!-- <p>
+          Hardworking, Fast Learner and Enthusiastic developer eager to
+          contribute to team success through hard and smart work, attention to
+          details and excellent organisational skills. I enjoy both leading
+          projects and contributin at every level.
+        </p> -->
+        <div id="about">
+          <div class="container">
+            <div class="row">
+              <div class="about-col-1">
+                <img src="ab.png" alt="user" />
+              </div>
+              <div class="about-col-2">
+                <h1 class="sub-title">About <span>Me</span></h1>
+                <p class="ab">
+                  Hardworking, Fast Learner and Enthusiastic developer eager to
+                  contribute to team success through hard and smart work, attention
+                  to details and excellent organisational skills. I enjoy both
+                  leading projects and contributin at every level.
+                </p>
+                <div class="tag-titles">
+                  <p class="tag-links active-link" onclick="opentab('skills')">
+                    Skills
+                  </p>
+                  <p class="tag-links" onclick="opentab('experience')">
+                    Experience
+                  </p>
+    
+                  <p class="tag-links" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                  <ul>
+                    <li>
+                      <span><i class='bx bxl-html5'></i></span><br />HTML
+                    </li>
+                    <li>
+                      <span><i class='bx bxl-css3'></i></span><br />CSS
+                    </li>
+                    <li>
+                      <span><i class='bx bxl-javascript'></i></i></span><br />JAVASCRIPT
+                    </li>
+                    <li>
+                      <span><i class='bx bxl-react'></i></span><br />React
+                    </li>
+                  </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                  <ul>
+                    <li>
+                      <span>Frontend developer</span><br />Design and develop web
+                      based components and systems
+                    </li>
+                    <li>
+                      <span>Frontend developer</span><br />Design and develop web
+                      based components and systems
+                    </li>
+                    <li>
+                      <span>Frontend developer</span><br />Design and develop web
+                      based components and systems
+                    </li>
+                  </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                  <ul>
+                    <li>
+                      <span>Bachelors of computer</span><br />shri chhatrapi shivaji
+                      college,omerga
+                    </li>
+                    <li><span>Intermediate</span><br />Bhimroa naik jr.college</li>
+                    <li>
+                      <span>coures</span><br />PCC[physics,chemistry,Computer]
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <a href="http://127.0.0.1:5500/about.html" target="_blank"  class="btn"
+          >Read More</a
+        > -->
+      </div>
+    </section>
+    <!-- --------------------------------Create A Service Section-------------------------- -->
+    <section class="service" id="service">
+      <h2 class="allheading">Our <span>Services</span></h2>
+      <div class="service-section">
+        <div class="service-box">
+          <i class="bx bx-code-alt"></i>
+          <h3>Web Development</h3>
+          <p>
+            We specialize in creating custom websites that are tailored to meet
+            the unique needs of each of our clients. I can create websites for
+            businesses of all sizes,from small startups to large corporation.
+          </p>
+          <a href="#" class="btn">Read More </a>
+        </div>
+        <div class="service-box">
+          <i class="bx bx-bar-chart-alt"></i>
+          <h3>Digital Marketing</h3>
+          <p>
+            Digital marketing services focus on delivering measurable results
+            and driving business growth for our clients.We work with business
+            growth for our clients. Goal is to help our clients grow their
+            business.
+          </p>
+          <a href="#" class="btn">Read More </a>
+        </div>
+        <div class="service-box">
+          <i class="bx bxl-adobe"></i>
+          <h3>Photoshop</h3>
+          <p>
+            We offer a wide range of Photoshop servises to help our clients
+            fulfill their creative needs.I have experience working with
+            businesses of all sizes to create stunning designs that catch their
+            audience's attention.
+          </p>
+          <a href="#" class="btn">Read More </a>
+        </div>
+      </div>
+    </section>
+    <!-- --------------------------------Create A Portfolio Section-------------------------- -->
+    <section class="portfolio" id="portfolio">
+      <h2 class="allheading">Recent <span>Project</span></h2>
+
+      <div class="portfolio-section">
+        <div class="portfolio-box">
+          <img src="wa.jpg" alt="codimg background" />
+          <div class="portfolio-head">
+            <h4>Weather Watcher</h4>
+            <p>
+              The Weather Watcher app is a user-friendly tool that provides
+              detailed weather information for any location across the globe.
+            </p>
+            <a href="http://127.0.0.1:5501/index.html" target="_blank"
+              ><i class="bx bx-link-external"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="portfolio-box">
+          <img src="coding.jpg" alt="codimg background" />
+          <div class="portfolio-head">
+            <h4>Quote Genrater</h4>
+            <p>
+              Quote Genrater is a website that generates insprirational quotes
+              to motivate and inspire its users. The website is designed to
+              provide daily encoragement through a ramdomly generated quote that
+              appears on the user's screen each time thay visit the site.
+            </p>
+            <a href="http://127.0.0.1:5502/index.html" target="_blank"
+              ><i class="bx bx-link-external"></i
+            ></a>
+          </div>
+        </div>
+        <div class="portfolio-box">
+          <img src="coding.jpg" alt="codimg background" />
+          <div class="portfolio-head">
+            <h4>Web Design</h4>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam
+              dolor impedit quod inventore, maxime commodi.
+            </p>
+            <a href="#"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        <div class="portfolio-box">
+          <img src="coding.jpg" alt="codimg background" />
+          <div class="portfolio-head">
+            <h4>Web Design</h4>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam
+              dolor impedit quod inventore, maxime commodi.
+            </p>
+            <a href="#"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        <div class="portfolio-box">
+          <img src="coding.jpg" alt="codimg background" />
+          <div class="portfolio-head">
+            <h4>Web Design</h4>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam
+              dolor impedit quod inventore, maxime commodi.
+            </p>
+            <a href="#"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        <div class="portfolio-box">
+          <img src="coding.jpg" alt="codimg background" />
+          <div class="portfolio-head">
+            <h4>Web Design</h4>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam
+              dolor impedit quod inventore, maxime commodi.
+            </p>
+            <a href="#"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- --------------------------------Create A Contact Section-------------------------- -->
+    <section class="contact" id="contact">
+      <h2 class="allheading">Contact <span>Us</span></h2>
+      <form action="https://formspree.io/f/mknakbgr" method="POST">
+        <!-- onsubmit="sendEmail(); reset(); return false" -->
+        <div class="input-box">
+          <input type="text" placeholder="Full Name" name="name" />
+          <input type="email" placeholder="Email" id="email" name="email" />
+        </div>
+        <div class="input-box">
+          <input type="number" placeholder="Mobile Number" name="number" />
+          <input type="text" placeholder="Subject For" name="text" />
+        </div>
+
+        <textarea
+          class="input-box"
+          name="message"
+          id="text"
+          cols="30"
+          rows="10"
+          placeholder="Message"
+        ></textarea>
+        <!-- <a href="sms:+911234567890"> +91-123-4567-890 </a> -->
+        <!-- <a href="sms:+918956508192"> -->
+        <input type="submit" class="btn" name="message" />
+        <!-- </a> -->
+        <!-- <input
+          href="sms:+918956508192"
+          type="submit"
+          class="btn"
+          value="Send message"
+        /> -->
+      </form>
+    </section>
+    <!-- --------------------------------Create A Footer Section-------------------------- -->
+    <footer class="footer">
+      <div class="text">
+        <p>Copyright@2023 by Sakshi || All Right Reserved</p>
+      </div>
+      <div class="footerUp">
+        <a href="#"><i class="bx bx-up-arrow-alt"></i></a>
+      </div>
+    </footer>
+    <script>
+      var tablinks = document.getElementsByClassName("tag-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        function opentab(tabname) {
+          for (tablink of tablinks) {
+            tablink.classList.remove("active-link");
+          }
+          for (tabcontent of tabcontents) {
+            tabcontent.classList.remove("active-tab");
+          }
+          event.currentTarget.classList.add("active-link");
+          document.getElementById(tabname).classList.add("active-tab");
+        }
+        var sidemenu = document.getElementById("sidemenu");
+        function open() {
+          sidemenu.style.right = "0";
+        }
+        function close() {
+          sidemenu.style.right = "-200px";
+        }
+  </script>
+
+    <script src="p.js"></script>
+    <script src=" https://smtpjs.com/v3/smtp.js"></script>
+    <!-- <script src="p.js"></script> -->
+  </body>
+</html>

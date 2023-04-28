@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <style>
+    body{
+        background-color:black;
+    }
+    #about {
+        padding: 80px 0;
+        color: #efe0e0;
+        /* background-color:black; */
+    }
+    
+    .row {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    
+    .about-col-1 {
+        flex-basis: 35%;
+    }
+    
+    .about-col-1 img {
+        width: 80%;
+        height: 95%;
+        clip-path: ellipse(50% 50% at 50% 50%);
+        border-radius: 35px;
+    }
+    
+    .about-col-2 {
+        flex-basis: 60%;
+    }
+    
+    .sub-title {
+        font-size: 60px;
+        font-weight: 600;
+        color: #fff;
+    }
+    
+    .tag-titles {
+        display: flex;
+        margin: 20px 0 40px;
+    }
+    
+    .tag-links {
+        margin-right: 50px;
+        font-size: 18px;
+        font-weight: 500;
+        cursor: pointer;
+        position: relative;
+    }
+    
+    .tag-links::after {
+        content: '';
+        width: 0;
+        height: 3px;
+        background: red;
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        transition: 0.5s;
+    }
+    
+    .tag-links.active-link::after {
+        width: 50%;
+    
+    }
+    
+    ul li {
+        list-style: none;
+        margin: 10px 0;
+    
+    
+    }
+    
+    ul li span {
+        color:red;
+        font-size: 45px;
+    
+    
+    }
+    span{
+        color:red;
+     
+    }
+    
+    .tab-contents {
+        display: none;
+    }
+    
+    .tab-contents.active-tab {
+        display: block;
+    }</style>
+</head>
+<body>
+    <div id="about">
+        <div class="container">
+          <div class="row">
+            <div class="about-col-1">
+              <img src="ab.png" alt="user" />
+            </div>
+            <div class="about-col-2">
+              <h1 class="sub-title">About <span>Me</span></h1>
+              <p>
+                Hardworking, Fast Learner and Enthusiastic developer eager to
+                contribute to team success through hard and smart work, attention
+                to details and excellent organisational skills. I enjoy both
+                leading projects and contributin at every level.
+              </p>
+              <div class="tag-titles">
+                <p class="tag-links active-link" onclick="opentab('skills')">
+                  Skills
+                </p>
+                <p class="tag-links" onclick="opentab('experience')">
+                  Experience
+                </p>
+  
+                <p class="tag-links" onclick="opentab('education')">Education</p>
+              </div>
+              <div class="tab-contents active-tab" id="skills">
+                <ul>
+                  <li>
+                    <span><i class='bx bxl-html5'></i></span><br />HTML
+                  </li>
+                  <li>
+                    <span><i class='bx bxl-css3'></i></span><br />CSS
+                  </li>
+                  <li>
+                    <span><i class='bx bxl-javascript'></i></i></span><br />JAVASCRIPT
+                  </li>
+                  <li>
+                    <span><i class='bx bxl-react'></i></span><br />React
+                  </li>
+                </ul>
+              </div>
+              <div class="tab-contents" id="experience">
+                <ul>
+                  <li>
+                    <span>Frontend developer</span><br />Design and develop web
+                    based components and systems
+                  </li>
+                  <li>
+                    <span>Frontend developer</span><br />Design and develop web
+                    based components and systems
+                  </li>
+                  <li>
+                    <span>Frontend developer</span><br />Design and develop web
+                    based components and systems
+                  </li>
+                </ul>
+              </div>
+              <div class="tab-contents" id="education">
+                <ul>
+                  <li>
+                    <span>Bachelors of computer</span><br />shri chhatrapi shivaji
+                    college,omerga
+                  </li>
+                  <li><span>Intermediate</span><br />Bhimroa naik jr.college</li>
+                  <li>
+                    <span>coures</span><br />PCC[physics,chemistry,Computer]
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</body>
+<script>
+    var tablinks = document.getElementsByClassName("tag-links");
+      var tabcontents = document.getElementsByClassName("tab-contents");
+      function opentab(tabname) {
+        for (tablink of tablinks) {
+          tablink.classList.remove("active-link");
+        }
+        for (tabcontent of tabcontents) {
+          tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+      }
+      var sidemenu = document.getElementById("sidemenu");
+      function open() {
+        sidemenu.style.right = "0";
+      }
+      function close() {
+        sidemenu.style.right = "-200px";
+      }
+</script>
+</html>
