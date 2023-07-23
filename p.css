@@ -118,18 +118,7 @@ section {
     opacity: 0;
 }
 
-/* @keyframes slideTop {
-    0% {
-        transform: translatey(-100px);
-        /* opacity: 2; */
-    /* } */
 
-    /* 100% {
-        transform: translatey(0);
-        opacity: 1;
-    } */
-
-/* } */ 
 
 .home-detail h1 {
     font-size: 5.6rem;
@@ -502,17 +491,7 @@ form .btn {
     border-radius: 50%;
 }
 
-/* .footerUp a {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    background: red;
-    padding: 0.6rem;
-    text-decoration: none;
-    border-radius: 50%;
-    position: absolute;
-    left: 600px;
-    /* top: 0px; */
+
 .footerUp i {
     font-size: 2.5rem;
     color: #111;
@@ -665,16 +644,4 @@ form .btn {
     }
 }
 
-/* .active#menu::before{
-    transform: rotate(45deg);
-    background: red;
-}
-.active#menu::after{
-    transform: rotate(-45deg);
-    box-shadow: none;
-    background: red;
 
-}
-.active#menu{
-    left: 0;
-} */
